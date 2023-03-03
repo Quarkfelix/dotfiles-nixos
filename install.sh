@@ -62,3 +62,7 @@ echo "-writing into output file for later"
 echo "-done"
 
 ## end setup ssh keys
+
+## set git email and name
+#git config --global user.email "you@example.com"
+#git config --global user.name "Your Name"

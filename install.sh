@@ -13,12 +13,6 @@ cd scripts
 chmod +x `ls`
 echo "done"
 
-# add all scripts to path
-echo "adding scripts folder to PATH"
-export PATH="/home/marc/.config/dotfiles-nixos/scripts:${PATH}"
-echo "done"
-
-
 
 ## setup ssh keys
 
@@ -54,11 +48,11 @@ done
 
 echo "-writing into output file for later"
 	pub_key=$(<$HOME"/.ssh/id_ed25519.pub")
-	echo "" >> manual_config
-	echo "GitHub Setup:" >> manual_config
-	echo "link: https://github.com/settings/keys" >> manual_config
-	echo "public key: "$pub_key >> manual_config
-	echo "" >> manual_config
+	echo "" >> $HOME/.config/dotfiles-nixos/manual_config
+	echo "GitHub Setup:" >> $HOME/.config/dotfiles-nixos/manual_config
+	echo "link: https://github.com/settings/keys" >> $HOME/.config/dotfiles-nixos/manual_config
+	echo "public key: "$pub_key >> manual$HOME/.config/dotfiles-nixos/manual_config_config
+	echo "" >> $HOME/.config/dotfiles-nixos/manual_config
 echo "-done"
 
 ## end setup ssh keys

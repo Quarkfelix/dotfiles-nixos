@@ -6,7 +6,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 SFILE="$DIR/system.ini"
 RFILE="$DIR/.system"
-STYLE="default"
+STYLE="hack"
 
 ## Get system variable values for various modules
 get_values() {
@@ -34,7 +34,7 @@ set_values() {
 
 ## Launch Polybar with selected style
 launch_bar() {
-	bash "$HOME"/.config/bspwm/themes/"$STYLE"/polybar/launch.sh
+	bash "$HOME"/.config/dotfiles-nixos/themes/"$STYLE"/polybar/launch.sh
 }
 
 # Execute functions

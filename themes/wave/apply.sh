@@ -5,7 +5,7 @@
 ## Script To Apply Themes
 
 ## Theme ------------------------------------
-BDIR="$HOME/.config/bspwm"
+BDIR="$HOME/.config/dotfiles-nixos"
 TDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 THEME="${TDIR##*/}"
 
@@ -17,7 +17,7 @@ modbackground=(`pastel gradient -n 7 $element_bg $altbackground | pastel format 
 ## Directories ------------------------------
 PATH_CONF="$HOME/.config"
 PATH_GEANY="$PATH_CONF/geany"
-PATH_BSPWM="$PATH_CONF/bspwm"
+PATH_BSPWM="$PATH_CONF/dotfiles-nixos"
 PATH_TERM="$PATH_BSPWM/alacritty"
 PATH_PBAR="$PATH_BSPWM/themes/$THEME/polybar"
 PATH_ROFI="$PATH_BSPWM/themes/$THEME/rofi"

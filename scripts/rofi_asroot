@@ -3,14 +3,14 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 
 # Import Current Theme
-DIR="$HOME/.config/bspwm"
-STYLE="default"
+DIR="$HOME/.config/dotfiles-nixos"
+STYLE="hack"
 RASI="$DIR/themes/$STYLE/rofi/asroot.rasi"
 
 # Theme Elements
 prompt='Root'
 mesg="Run Applications As Root"
-term='alacritty --class alacritty-float,alacritty-float --config-file /root/.config/bspwm/alacritty/alacritty.yml'
+term='alacritty --class alacritty-float,alacritty-float --config-file /root/.config/dotfiles-nixos/alacritty/alacritty.yml'
 
 # Options
 layout=`cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2`

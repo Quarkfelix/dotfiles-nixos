@@ -5,7 +5,7 @@
 ## Run ncmpcpp with alternate config
 
 # bspwm directory
-DIR="$HOME/.config/bspwm"
+DIR="$HOME/.config/dotfiles-nixos"
 
 CONFIG="$DIR/alacritty/alacritty.yml"
 

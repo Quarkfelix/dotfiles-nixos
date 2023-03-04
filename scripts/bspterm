@@ -5,7 +5,7 @@
 ## launch alacritty with bspwm config
 
 # bspwm directory
-DIR="$HOME/.config/bspwm"
+DIR="$HOME/.config/dotfiles-nixos"
 CONFIG="$DIR/alacritty/alacritty.yml"
 
 if [ "$1" == "--float" ]; then

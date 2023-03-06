@@ -8,9 +8,6 @@ BSPDIR="$HOME/.config/dotfiles-nixos"
 ## Export bspwm/bin dir to PATH
 export PATH="${PATH}:$BSPDIR/scripts"
 
-## Change Mouse speed
-
-
 ## Run java applications without issues
 export _JAVA_AWT_WM_NONREPARENTING=1
 #wmname LG3D
@@ -18,13 +15,13 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 ## Current theme ---------------------------------------------#
 
 ## Bspwm colors
-BSPWM_FBC='#007B82'
-BSPWM_NBC='#01161b'
-BSPWM_ABC='#05bbc5'
-BSPWM_PFC='#028c94'
+BSPWM_FBC='#00BCD4'
+BSPWM_NBC='#222d32'
+BSPWM_ABC='#ba68c8'
+BSPWM_PFC='#61c766'
 
 ## Bspwm appearance
-BSPWM_BORDER='1'
+BSPWM_BORDER='2'
 BSPWM_GAP='10'
 BSPWM_SRATIO='0.50'
 
@@ -67,7 +64,7 @@ bspc wm --adopt-orphans
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc
+killall -9 xsettingsd sxhkd dunst ksuperkey bspc
 
 # Lauch xsettingsd daemon
 xsettingsd --config="$BSPDIR"/xsettingsd &
@@ -84,17 +81,11 @@ sxhkd -c "$BSPDIR"/sxhkdrc &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# Enable power management
-xfce4-power-manager &
-
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash ~/.fehbg
-
-# Start mpd
-exec mpd &
+bash ./.fehbg
 
 # Start bspwm scripts
 bspbar

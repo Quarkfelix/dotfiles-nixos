@@ -7,11 +7,27 @@ mv ../dotfiles-nixos /home/marc/.config
 cd /home/marc/.config/dotfiles-nixos
 echo "done"
 
-# make all scripts executable
-echo "making scripts executable ..."
-cd scripts
-chmod +x `ls`
-echo "done"
+# make all scripts executable and owned by me
+for f in $(find $HOME"/.config/dotfiles-nixos" -name '*.sh'); do
+	chmod +x "$f"
+	chown marc "$f"
+done
+#extra for hack theme
+cd $HOME"/.config/dotfiles-nixos/themes/hack/polybar/scripts"
+chown marc check-network checkupdates
+chmod +x check-network checkupdates
+
+# make files for themes executable
+cd $HOME"/.config/dotfiles-nixos/themes"
+for d in */ ; do
+	cd $d
+	chmod +x apply.sh
+	cd ..
+done
+
+# create symlink for alacritty config
+ln -s /home/marc/.config/dotfiles-nixos/alacritty/ /home/marc/.config/alacritty
+
 
 
 ## setup ssh keys

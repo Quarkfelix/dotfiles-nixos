@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/dotfiles-nixos"
-STYLE="hack"
+STYLE="forest"
 RASI="$DIR/themes/$STYLE/rofi/asroot.rasi"
 
 # Theme Elements

@@ -137,6 +137,7 @@
     killall
     pastel
     htop
+    imagemagick #tool to convert images in cli
 
     # software
     brave

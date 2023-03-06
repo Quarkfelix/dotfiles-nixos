@@ -15,28 +15,33 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 ## Current theme ---------------------------------------------#
 
 ## Bspwm colors
-BSPWM_FBC='#00BCD4'
-BSPWM_NBC='#222d32'
-BSPWM_ABC='#ba68c8'
-BSPWM_PFC='#61c766'
+BSPWM_FBC='#007B82'
+BSPWM_NBC='#01161b'
+BSPWM_ABC='#05bbc5'
+BSPWM_PFC='#028c94'
 
 ## Bspwm appearance
-BSPWM_BORDER='2'
+BSPWM_BORDER='1'
 BSPWM_GAP='10'
 BSPWM_SRATIO='0.50'
 
 ## Configurations --------------------------------------------#
 
-## Manager Workspaces
+## Set Display alignment
+ xrandr --output HDMI-1 --pos 0x500 --rotation normal --output DP-2 --pos 1920x0 --primary --rotation normal
+
+## Set  Workspaces
 workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
-		#bspc monitor ${monitor} -n "$name" -d '1' '2' '3' '4' '5' '6' '7' '8'
-		#bspc monitor ${monitor} -n "$name" -d 'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H'
-		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' ''
+		if (( $name==1 )) ; then
+			bspc monitor ${monitor} -n "$name" -d '1' '2' '3'
+		else
+			bspc monitor ${monitor} -n "$name" -d 'Q' 'W' 'E'
+		fi
 		let name++
 	done
+	#bspc monitor DP-2 -n "2" -d '' '' '' '' '' '' '' ''
 }
 workspaces
 
@@ -85,7 +90,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash ./.fehbg
+bash .fehbg
 
 # Start bspwm scripts
 bspbar

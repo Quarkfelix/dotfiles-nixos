@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ## Set Default Wallpaper
-feh --bg-fill "$HOME/.config/dotfiles-nixos/themes/default/wallpaper" 
+feh --bg-fill "$HOME/.config/dotfiles-nixos/wallpapers/default.jpg" 

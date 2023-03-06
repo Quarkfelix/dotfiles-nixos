@@ -29,8 +29,7 @@ light_value='0.40'
 dark_value='0.10'
 
 # Wallpaper
-wdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-wallpaper="$wdir/wallpaper"
+wallpaper="$HOME/.config/dotfiles-nixos/wallpapers/car_image.jpg"
 
 # Polybar
 polybar_font='Iosevka Nerd Font:size=10;3'

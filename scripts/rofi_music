@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/dotfiles-nixos"
-STYLE="hack"
+STYLE="orange"
 RASI="$DIR/themes/$STYLE/rofi/music.rasi"
 
 # Theme Elements

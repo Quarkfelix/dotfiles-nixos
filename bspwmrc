@@ -15,10 +15,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 ## Current theme ---------------------------------------------#
 
 ## Bspwm colors
-BSPWM_FBC='#007B82'
-BSPWM_NBC='#01161b'
-BSPWM_ABC='#05bbc5'
-BSPWM_PFC='#028c94'
+BSPWM_FBC='#fd5c09'
+BSPWM_NBC='#031b22'
+BSPWM_ABC='#d33682'
+BSPWM_PFC='#e95508'
 
 ## Bspwm appearance
 BSPWM_BORDER='1'
@@ -28,7 +28,7 @@ BSPWM_SRATIO='0.50'
 ## Configurations --------------------------------------------#
 
 ## Set Display alignment
- xrandr --output HDMI-1 --pos 0x500 --rotation normal --output DP-2 --pos 1920x0 --primary --rotation normal
+xrandr --output HDMI-0 --pos 0x500 --rotation normal --output DP-2 --pos 1920x0 --primary --rotation normal
 
 ## Set  Workspaces
 workspaces() {

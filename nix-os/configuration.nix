@@ -47,6 +47,36 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+    # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+##
+# System
+##
+
+  # change default shell
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  # NVIDIA drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
+
 ##
 # Seting up GUI
 ##
@@ -64,13 +94,11 @@
   services.xserver.windowManager.bspwm.configFile = "/home/marc/.config/dotfiles-nixos/bspwmrc";
   services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/marc/.config/dotfiles-nixos/sxhkdrc";
   
-
+##
 # Configure Mouse and Keyboard
+##
 
   # Mouse
-  # could be handled with services.xserver.inputClassSelections
-  # currently set manual (one time) with xinput command
-  # services.xserver.libinput.mouse.accelProfile = "flat";
   services.xserver.libinput.mouse = {
     accelProfile = "flat";
     transformationMatrix = "0.8 0 0 0 0.8 0 0 0 1";
@@ -79,10 +107,6 @@
   services.xserver.libinput.mouse.leftHanded = false; 
   services.xserver.libinput.enable = true;
   services.xserver.exportConfiguration = true;
-
-  # services.xserver.displayManager.sessionCommands = {
-  # 
-  # };
 
   # Configure keyboard
   services.xserver = {
@@ -95,23 +119,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.marc = {
@@ -138,6 +145,7 @@
     pastel
     htop
     imagemagick #tool to convert images in cli
+    oh-my-zsh
 
     # software
     brave
@@ -154,6 +162,7 @@
     picom
     feh
     nerdfonts
+    xorg.xprop
   ];
 
   fonts.fonts = with pkgs; [
